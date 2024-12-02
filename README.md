@@ -67,14 +67,6 @@ DunkVerse leverages the cutting-edge capabilities of **Base and Unichain Blockch
 
 ---
 
-## Deployment Details for Base📝
-
-- **Contract Addresses**:
-  - **DunkVerse Token (FTO)**: https://sepolia.basescan.org/address/0xA4D6480Bf490Aba5554B6Fa732180AC0Bc45B1Ba
-  - **Betting Pool**: https://sepolia.basescan.org/address/0xCBa557190D42Dcc1Dc646B53308e765B578a5A5f
-
----
-
 ## How to Start on Base/ Unichain 🚀
 
 1. **Connect Your Wallet**: Use Metamask or RainbowKit to connect to the Base/ Unichain network.
