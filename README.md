@@ -65,10 +65,8 @@ DunkVerse leverages the cutting-edge capabilities of **Base Blockchain** to prov
 ## Deployment Details for Base 📝
 
 - **Contract Addresses**:
-  - **DunkVerse Token (FTO)**: `0xA4D6480Bf490Aba5554B6Fa732180AC0Bc45B1Ba`
-  - **Betting Pool**: `0xCBa557190D42Dcc1Dc646B53308e765B578a5A5f`
-- **Explorer**: [Base Sepolia Explorer](https://sepolia-explorer.base.org)
-- **RPC URL**: `https://sepolia.base.org`
+  - **DunkVerse Token (FTO)**: https://sepolia.basescan.org/address/0xA4D6480Bf490Aba5554B6Fa732180AC0Bc45B1Ba
+  - **Betting Pool**: https://sepolia.basescan.org/address/0xCBa557190D42Dcc1Dc646B53308e765B578a5A5f
 
 ---
 
