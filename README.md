@@ -33,6 +33,11 @@ DunkVerse leverages the cutting-edge capabilities of **Base Blockchain** to prov
 
 ---
 
+## Under the Hood
+
+![Screenshot 2024-12-02 071628](https://github.com/user-attachments/assets/6bb743ac-28a8-4537-aa72-4b74af43f82a)
+
+
 ## Tech Stack for Base Deployment 🛠️
 
 - **Smart Contracts**: Solidity-based ERC-20 and ERC-721 standards.
