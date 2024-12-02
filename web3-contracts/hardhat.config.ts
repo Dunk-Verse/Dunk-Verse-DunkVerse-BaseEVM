@@ -15,8 +15,13 @@ if (!POLYGONSCAN_API_KEY) {
 }
 
 const config = {
-  defaultNetwork: 'BaseTestnet',
+  defaultNetwork: 'UnichainSepoliaTestnet',
   networks: {
+    UnichainSepoliaTestnet: {
+      url: 'https://sepolia.unichain.org', // Unichain Sepolia Testnet RPC
+      chainId: 1301, // Chain ID for Unichain Sepolia
+      accounts: [PRIVATE_KEY],
+    },
     BaseTestnet: {
       url: 'https://sepolia.base.org/', // Base Sepolia Testnet RPC
       chainId: 84531, // Correct chain ID for Base Testnet
@@ -34,10 +39,18 @@ const config = {
     },
     customChains: [
       {
+        network: 'UnichainSepoliaTestnet',
+        chainId: 1301,
+        urls: {
+          apiURL: 'https://api.sepolia.unichain.org', // xyz API URL
+          browserURL: 'https://sepolia.uniscan.xyz', // Unichain Sepolia Explorer
+        },
+      },
+      {
         network: 'BaseTestnet',
         chainId: 84531,
         urls: {
-          apiURL: 'https://api-sepolia.base.org', // Hypothetical API URL
+          apiURL: 'https://api-sepolia.base.org', // xyz API URL
           browserURL: 'https://sepolia.base.org', // Base Testnet Explorer
         },
       },

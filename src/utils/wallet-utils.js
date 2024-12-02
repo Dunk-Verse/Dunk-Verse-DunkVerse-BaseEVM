@@ -3,9 +3,27 @@ import { configureChains, createConfig } from 'wagmi';
 import { baseSepolia, polygon } from 'wagmi/chains';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 
+// Add Unichain Sepolia Testnet
+const unichainSepolia = {
+  id: 1301,
+  name: "Unichain Sepolia Testnet",
+  network: "unichain-sepolia",
+  nativeCurrency: {
+    name: "Ether",
+    symbol: "ETH",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: { http: ["https://sepolia.unichain.org"] },
+  },
+  blockExplorers: {
+    default: { name: "Uniscan", url: "https://sepolia.uniscan.xyz" },
+  },
+};
+
 // Configure chains and providers
 const { chains, publicClient } = configureChains(
-  [polygon, baseSepolia],
+  [polygon, baseSepolia, unichainSepolia], // Include Unichain Sepolia
   [
     jsonRpcProvider({
       rpc: (chain) => {
@@ -16,17 +34,15 @@ const { chains, publicClient } = configureChains(
             webSocket:
               'wss://polygon-mainnet.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY',
           };
-        } else if (chain.id === 80001) {
-          // Polygon Mumbai Testnet
-          return {
-            http: 'https://polygon-mumbai.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY',
-            webSocket:
-              'wss://polygon-mumbai.g.alchemy.com/v2/YOUR_ALCHEMY_API_KEY',
-          };
         } else if (chain.id === baseSepolia.id) {
           // Base Sepolia Testnet
           return {
             http: 'https://sepolia.base.org', // Replace with the actual Base Sepolia RPC URL
+          };
+        } else if (chain.id === unichainSepolia.id) {
+          // Unichain Sepolia Testnet
+          return {
+            http: 'https://sepolia.unichain.org', // RPC URL for Unichain Sepolia
           };
         } else {
           throw new Error(`Unsupported chain ID: ${chain.id}`);
@@ -39,7 +55,7 @@ const { chains, publicClient } = configureChains(
 // Configure wallet connectors
 const { connectors } = getDefaultWallets({
   appName: 'Reels-Fi',
-  projectId: '87106bd465234d097b8a51ba585bf799', // Replace with your actual project ID
+  projectId: '87106bd465234d097b8a51ba585bf799',
   chains,
 });
 
